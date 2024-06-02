@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudante</title>
+</head>
+<body>
+    <h1>Estudante</h1>
+
+    <div id="resultados">
+        <!-- Os resultados serão inseridos aqui -->
+    </div>
+
+    <script>
+        class Estudante {
+            constructor(nome, email, RA, curso, disciplinas) {
+                this.nome = nome;
+                this.email = email;
+                this.RA = RA;
+                this.curso = curso;
+                this.disciplinas = disciplinas;
+            }
+
+            primeiraDisciplina() {
+                if (this.disciplinas.length > 0) {
+                    return this.disciplinas[0];
+                }
+                return null;
+            }
+
+            ultimaDisciplina() {
+                if (this.disciplinas.length > 0) {
+                    return this.disciplinas[this.disciplinas.length - 1];
+                }
+                return null;
+            }
+        }
+
+    
+        const estudante1 = new Estudante("Alice", "alice@gmail.com", "123456", "Engenharia", ["Matemática", "Física", "Química"]);
+        const estudante2 = new Estudante("Bob", "bob@gmail.com", "654321", "Medicina", ["Biologia", "Anatomia", "Fisiologia"]);
+
+    
+        function exibirResultados(estudante) {
+            const resultadosDiv = document.getElementById('resultados');
+            const estudanteInfo = document.createElement('div');
+            estudanteInfo.innerHTML = `
+                <h2>${estudante.nome}</h2>
+                <p>Email: ${estudante.email}</p>
+                <p>RA: ${estudante.RA}</p>
+                <p>Curso: ${estudante.curso}</p>
+                <p>Primeira Disciplina: ${estudante.primeiraDisciplina()}</p>
+                <p>Última Disciplina: ${estudante.ultimaDisciplina()}</p>
+            `;
+            resultadosDiv.appendChild(estudanteInfo);
+        }
+
+        
+        exibirResultados(estudante1);
+        exibirResultados(estudante2);
+    </script>
+</body>
+</html>
