@@ -1,16 +1,20 @@
 {
-  "name": "atividade5",
+  "name": "aula0306",
   "version": "1.0.0",
-  "main": "index.js",
-"scripts": {
-  "dev": "nodemon index.js"
-},
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "npx nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Felipe",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "prompt-sync": "^4.2.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.3"
